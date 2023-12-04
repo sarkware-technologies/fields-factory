@@ -3,7 +3,7 @@ dotenv.config();
 
 import cors from "cors";
 import express from "express";
-
+import routes from "./routes/index.js"
 import DBM from "./utils/db-manager.js";
 import SystemSocket from "./utils/socket-manager.js"
 

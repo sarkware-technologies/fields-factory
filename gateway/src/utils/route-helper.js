@@ -34,4 +34,18 @@ export default class RouteHelper {
 
     }
 
+    getUrlPathParts = (_url) => {
+
+        const parsedUrl = new URL(_url);
+        const pathname = parsedUrl.pathname;
+        const parts = pathname.split("/").filter((part) => part !== "");
+    
+        if (parts && Array.isArray(parts) && parts.length >= 4) {
+          return [parts[1], parts[2], parts[3]];
+        }
+    
+        return [null, null, null];
+        
+    };
+
 }

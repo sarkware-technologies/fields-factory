@@ -49,15 +49,9 @@ class SystemSocket {
             
             /* Handle service events */
             _socket.on("routes", (_data) => this.handleServiceRoutesRequest(_socket, _data));
-            _socket.on("entities", (_data) => this.handleEntityListRequest(_socket, _data));
-            _socket.on("entity", (_data) => this.handleEntityGetRequest(_socket, _data));
-            _socket.on("menus", (_data) => this.handleMenusRequest(_socket, _data));
+            _socket.on("entities", (_data) => this.handleEntityListRequest(_socket, _data));                        
             _socket.on("capabilities", (_data) => this.handleCapabilityRequest(_socket, _data));            
-            _socket.on("demand_capabilities", (_data) => this.handleDemandCapabilityRequest(_socket, _data));            
-            _socket.on("partner_features", (_data) => this.handlePartnerFeatureRequest(_socket, _data));     
-            _socket.on("demand_partner_features", (_data) => this.handleDemandPartnerFeatureRequest(_socket, _data));
-            _socket.on("notify_config", (_data) => this.handleNotifyConfigRequest(_socket, _data));     
-            _socket.on("demand_service_entity", (_data) => this.handleDemandPartnerFeatureRequest(_socket, _data));
+            _socket.on("notify_config", (_data) => this.handleNotifyConfigRequest(_socket, _data));
             
         });
 

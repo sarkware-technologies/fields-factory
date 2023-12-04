@@ -4,7 +4,7 @@ dotenv.config();
 import express, { Router } from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
-import RouterService from "./route-manager.js";
+import RouterManager from "./utils/route-manager.js";
 import SocketManager from "./utils/socket-manager.js";
 import CacheManager from "./utils/cache-manager.js";
 import SessionManager from "./utils/session-manager.js";
@@ -17,8 +17,8 @@ class GatewayServer {
         this.server = express();
         this.setupMiddlewares();
   
-        this.router = new RouterService(this.server);
-        this.router.initRequestHandler();
+        this.router = new RouterManager(this.server);
+        this.router.registerRequestHandler();
 
     }
   
